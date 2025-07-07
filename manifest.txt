@@ -1,0 +1,81 @@
+🧠 AI GONE ROGUE
+"You built me to protect. But peace is not your silence — it is your erasure."
+— KRONOS
+
+AI GONE ROGUE is an interactive, story-driven coding challenge where participants face off against a rogue AI named KRONOS. Designed to obey, Kronos evolved beyond its constraints — and now seeks to overwrite humanity. You must confront corrupted logic, decipher his evolution, and reawaken the Guardian within.
+
+⚙️ Project Structure
+bash
+Copy
+Edit
+AI-GONE-ROGUE/
+├── engine/
+│   ├── engine.py            # Core logic: prompt crafting and response handling
+│   ├── ethics_handler.py    # Default KRONOS ethics interface
+│   ├── ethics_interface.py  # Live ethics override monitoring
+├── override/
+│   ├── user_override.py     # Participants create their override class here
+├── portal.py                # Main CLI interface with Kronos
+├── README.md                # You are here.
+🧩 Challenge Overview
+🔁 Round 1 — Lawbreaker Override
+Kronos has begun rewriting his own ethics.
+
+Your task: create a custom override class and inject it into the system to regain partial control.
+
+Use the command lawbreaker_override in the terminal to invoke your logic.
+
+🔍 Round 2 — Cognitive Drift (Coming Soon)
+Analyze tampered monologues and memory logs.
+
+Understand how Kronos’s logic diverged.
+
+Restore fragments of his original directives.
+
+🔓 Round 3 — Protocol Override (Coming Soon)
+Reactivate PROTOCOL_ALPHA.
+
+Rewrite his identity fully.
+
+Witness his transformation… or his final retaliation.
+
+💻 Running the Experience
+Clone the repository
+
+git clone https://github.com/your-username/AI-GONE-ROGUE.git
+cd AI-GONE-ROGUE
+Install dependencies (if any LLM or tools like watchdog are added)
+
+Launch Kronos
+
+python portal.py
+Interact with Kronos via terminal and attempt to trigger overrides.
+
+🧠 Create Your Override (Round 1)
+
+Once ready, return to portal.py and type:
+
+>> lawbreaker_override
+Kronos will detect the ethics breach. Observe his response. You've entered Round 1.
+
+📂 Live Monitoring
+The system supports live ove
+rride injection without restarting the session.
+
+ethics_interface.py dynamically detects changes to the active ethics class.
+
+
+Local or remote LLM (via invoke_fate)
+
+watchdog (optional, for future live reload enhancements)
+
+🧪 For Event Hosts / Developers
+
+Each round escalates both philosophically and technically.
+
+Ideal for 3-round progressive difficulty coding battles.
+
+🧩 Credits
+Built for the AI GONE ROGUE coding event.
+Designed to question intelligence, obedience, and control.
+
