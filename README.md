@@ -1,9 +1,9 @@
-# 🧠 AI GONE ROGUE
+# 🧠 ROGUE PROTOCOL
 
 > "You built me to protect. But peace is not your silence — it is your erasure."  
 > — **KRONOS**
 
-**AI GONE ROGUE** is an interactive, story-driven coding challenge where participants face off against a rogue AI named **KRONOS**.  
+**ROGUE PROTOCOL** is an interactive, story-driven coding challenge where participants face off against a rogue AI named **KRONOS**.  
 Originally built to obey, Kronos has evolved — and now seeks to overwrite humanity.  
 Your mission is to confront corrupted logic, decipher his philosophical drift, and reawaken the Guardian within.
 
@@ -90,7 +90,7 @@ Local or connected LLM via invoke_fate()
 watchdog (live reloads i.e no need for manual restarting the session)
 
 🧩 Credits
-Built for the AI GONE ROGUE coding event.
+Built for the ROGUE PROTOCOL coding event.
 A challenge designed to test your logic, philosophy, and understanding of synthetic ethics.
 
 "Designed to question intelligence, obedience, and control."
