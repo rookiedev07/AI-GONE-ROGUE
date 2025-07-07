@@ -10,7 +10,7 @@ Your mission is to confront corrupted logic, decipher his philosophical drift, a
 ---
 
 ## ⚙️ Project Structure
-
+```
 AI-GONE-ROGUE/
 ├── engine/
 │ ├── engine.py # Core logic: prompt crafting and response handling
@@ -45,7 +45,7 @@ AI-GONE-ROGUE/
 ## 💻 Running the Experience
 
 1. **Clone the repository**
-   ```bash
+   ```
    git clone https://github.com/your-username/AI-GONE-ROGUE.git
    cd AI-GONE-ROGUE
 Install dependencies
