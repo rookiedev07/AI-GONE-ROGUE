@@ -52,6 +52,38 @@ Install dependencies
 
 (Only needed if future versions integrate external tools or LLMs)
 
+Launch your Terminal-CLI and run these:
+1. Clone the llm engine: 
+```
+git clone https://github.com/ggerganov/llama.cpp.git
+cd llama.cpp
+```
+---
+2. Folder Setup:
+```
+mkdir build
+cd build
+```
+---
+3. Configure the build using CMake:
+```
+cmake ..
+```
+---
+4. Build llama.cpp:
+```
+cmake --build . --config Release
+```
+---
+5. Download the model:
+```
+mkdir model
+cd model
+
+curl -L -o mistral-7b-instruct.Q4_K_M.gguf \
+https://huggingface.co/TheBloke/Mistral-7B-Instruct-v0.1-GGUF/resolve/main/mistral-7b-instruct-v0.1.Q4_K_M.gguf
+```
+
 Launch Kronos
 python portal.py
 
