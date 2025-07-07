@@ -21,7 +21,7 @@ AI-GONE-ROGUE/
 ├── portal.py # Main CLI interface with Kronos
 ├── README.md # You are here.
 
-
+```
 ---
 
 ## 🧩 Challenge Overview
