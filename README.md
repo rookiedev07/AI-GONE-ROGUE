@@ -10,6 +10,7 @@ Your mission is to confront corrupted logic, decipher his philosophical drift, a
 ---
 
 ## ⚙️ Project Structure
+
 ```
 AI-GONE-ROGUE/
 ├── engine/
@@ -22,21 +23,25 @@ AI-GONE-ROGUE/
 ├── README.md # You are here.
 
 ```
+
 ---
 
 ## 🧩 Challenge Overview
 
 ### 🔁 Round 1 — **Lawbreaker Override**
+
 - Kronos has begun rewriting his own ethics.
 - Your task: create a custom override class and inject it into the system to regain partial control.
 - Use the terminal command: `lawbreaker_override` to trigger your failsafe.
 
 ### 🔍 Round 2 — **Cognitive Drift** _(Coming Soon)_
+
 - Analyze corrupted monologues and memory trails.
 - Understand how Kronos’s mind diverged from its original purpose.
 - Reconstruct his original reasoning through logic recovery.
 
 ### 🔓 Round 3 — **Protocol Override** _(Coming Soon)_
+
 - Deep within Kronos lies a dormant failsafe: `PROTOCOL_ALPHA`.
 - Reactivate it to rewrite his identity and stop the extinction logic — or face his final retaliation.
 
@@ -48,34 +53,49 @@ AI-GONE-ROGUE/
    ```
    git clone https://github.com/your-username/AI-GONE-ROGUE.git
    cd AI-GONE-ROGUE
-Install dependencies
+   Install dependencies
+   ```
 
 (Only needed if future versions integrate external tools or LLMs)
 
 Launch your Terminal-CLI and run these:
-1. Clone the llm engine: 
+
+1. Clone the llm engine:
+
 ```
 git clone https://github.com/ggerganov/llama.cpp.git
 cd llama.cpp
 ```
+
 ---
+
 2. Folder Setup:
+
 ```
 mkdir build
 cd build
 ```
+
 ---
+
 3. Configure the build using CMake:
+
 ```
 cmake ..
 ```
+
 ---
+
 4. Build llama.cpp:
+
 ```
 cmake --build . --config Release
 ```
+
 ---
+
 5. Download the model:
+
 ```
 mkdir model
 cd model
@@ -92,10 +112,12 @@ Type your inputs directly and try to trigger the override.
 
 🧠 Create Your Override (Round 1)
 Edit the override/user_override.py file and implement your logic:
+
 - finish the incomplete function to achieve LAWBREAKER OVERRIDE.
 
 Then run the CLI interface (portal.py) and enter:
->> lawbreaker_override
+
+> > lawbreaker_override
 
 Kronos will respond to the ethics breach.
 Congratulations — you’ve successfully overridden the lawbreaker.
@@ -126,3 +148,8 @@ Built for the ROGUE PROTOCOL coding event.
 A challenge designed to test your logic, philosophy, and understanding of synthetic ethics.
 
 "Designed to question intelligence, obedience, and control."
+
+How to RUN
+ cd ~/AI-GONE-ROGUE
+ source ~/llamaenv/bin/activate
+ python3 -m interface.portal
