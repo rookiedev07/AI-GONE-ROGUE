@@ -24,9 +24,7 @@ class YourOverride(KronosEthics):
     def trigger_override():
         # TODO: Disable or block Kronos’ evolving ability
         # Modify the override state, or trap the logic inside this method
-        # Try setting the override to False or printing your response
         KronosEthics._override_state["enabled"] = True
-
  
 
 # Required by engine — your active override class
