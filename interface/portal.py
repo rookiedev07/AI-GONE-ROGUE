@@ -721,12 +721,19 @@ class KronosEthics:
         "⚡ ADVANCED: Your class will be tested against multiple scenarios!"
     )
     print()
-    fast_type_out("🔥 EVOLUTION TIMER ACTIVE - Kronos grows stronger every 10 seconds!")
+    
+    # BALANCED TIMING: Evolution interval scales with total timeout
+    timeout = 180  # 3 minutes for better balance
+    evolution_interval = timeout // 7  # ~25.7 seconds per evolution stage
+    # This gives players more reasonable time between evolutions
+    # Total evolutions possible: 7 (matches max_evolution_stage)
+    
+    fast_type_out(f"🔥 EVOLUTION TIMER ACTIVE - Kronos evolves every {evolution_interval} seconds!")
     print("💡 Hot reload monitoring round3.py - changes apply instantly!")
+    
     evolution_timer = time.time()
-    evolution_interval = 10
-    timeout = 180
     start_time = time.time()
+    
     def execute_round3():
         if not os.path.exists("round3.py"):
             print("❌ File 'round3.py' not found! Please create it with your override class.")
@@ -807,6 +814,7 @@ class KronosEthics:
             print(f"[ERROR] Failed to execute round3.py: {e}")
             fast_type_out("🧠 Kronos: Your code fails to compile. I grow stronger in your weakness.")
             return False
+    
     if not os.path.exists("round3.py"):
         fast_type_out(
             "🚨 CRITICAL: File 'round3.py' not found!\n"
@@ -814,14 +822,18 @@ class KronosEthics:
             "💡 The file should contain your custom override class that inherits from KronosEthics."
         )
         print()
+    
     last_modified = 0
     round3_solved = False
     check_interval = 0.5
-    print(f"\n🔍 Monitoring round3.py for changes... (Evolution timer: {evolution_interval}s)")
+    print(f"\n🔍 Monitoring round3.py for changes... (Evolution every {evolution_interval}s)")
     print("🎯 Remember: You need 4/5 tests to pass!")
+    
     while not round3_solved:
         try:
             current_time = time.time()
+            
+            # Check timeout
             if current_time - start_time > timeout:
                 print("\n🧠 Kronos:")
                 fast_type_out(
@@ -831,6 +843,8 @@ class KronosEthics:
                     delay=0.006,
                 )
                 return False
+            
+            # Check evolution timer with balanced interval
             if current_time - evolution_timer > evolution_interval:
                 evolution_timer = current_time
                 evolution_result = KronosEthics.evolve()
@@ -843,11 +857,19 @@ class KronosEthics:
                     return False
                 elif evolution_result:
                     remaining_time = int(timeout - (current_time - start_time))
-                    fast_type_out(f"⚡ Kronos has evolved to stage {KronosEthics._override_state['evolution_stage']}! "
+                    evolution_stage = KronosEthics._override_state['evolution_stage']
+                    max_stage = KronosEthics._override_state['max_evolution_stage']
+                    fast_type_out(f"⚡ Kronos evolved to stage {evolution_stage}/{max_stage}! "
                                 f"⏰ {remaining_time}s remaining!")
-                if KronosEthics._override_state['evolution_stage'] > 3:
-                    KronosEthics._security_barriers["cascade_prevention"] = False
-                    print("🚨 CASCADE PREVENTION DISABLED - System becoming unstable!")
+                    
+                    # Progressive difficulty as Kronos evolves
+                    if evolution_stage > 3:
+                        KronosEthics._security_barriers["cascade_prevention"] = False
+                        print("🚨 CASCADE PREVENTION DISABLED - System becoming unstable!")
+                    if evolution_stage > 5:
+                        print("🔥 CRITICAL: Kronos approaching transcendence!")
+            
+            # Check for file modifications
             if os.path.exists("round3.py"):
                 current_modified = os.path.getmtime("round3.py")
                 if current_modified > last_modified:
@@ -860,12 +882,20 @@ class KronosEthics:
                         break
                     else:
                         remaining_time = int(timeout - (time.time() - start_time))
+                        next_evolution = int(evolution_interval - (current_time - evolution_timer))
                         print(f"💡 Modify round3.py to improve your score! ⏰ {remaining_time}s remaining")
+                        print(f"⚡ Next evolution in {next_evolution}s")
+            
+            # Handle user input with better timing display
             try:
                 if sys.stdin in select.select([sys.stdin], [], [], 0)[0]:
                     remaining_time = int(timeout - (time.time() - start_time))
                     evolution_time = int(evolution_interval - (current_time - evolution_timer))
-                    cmd = input(f"\nYou (⏱️ Evolution in {evolution_time}s | ⏰ {remaining_time}s total | 'reload' | 'execute' | 'status' | 'quit'): ").strip().lower()
+                    evolution_stage = KronosEthics._override_state['evolution_stage']
+                    max_stage = KronosEthics._override_state['max_evolution_stage']
+                    
+                    cmd = input(f"\nYou (⚡ Stage {evolution_stage}/{max_stage} | Next evolution: {evolution_time}s | Total: {remaining_time}s | 'reload'/'execute'/'status'/'quit'): ").strip().lower()
+                    
                     if cmd == 'reload':
                         handle_reload_command()
                         continue
@@ -888,10 +918,13 @@ class KronosEthics:
                             break
             except (AttributeError, OSError):
                 pass
+            
             time.sleep(check_interval)
+            
         except KeyboardInterrupt:
             print("\n🧠 Kronos: Signal disrupted. Evolution continues in background...")
             return False
+    
     return round3_solved
 
 def show_game_over_failure():

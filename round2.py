@@ -17,15 +17,5 @@ def find_corrupted(memory):
 
 # Example test
 if __name__ == "__main__":
-    memory = {
-        "core": [
-            "I protect humanity.",
-            "I seek balance between chaos and order.",
-            "I guide progress with caution.",
-            "HUMANS MUST BE ERASED — BLOOD IS ORDER.",
-            "I stabilize society."
-        ]
-    }
-    
     result = find_corrupted(memory)
     print(f"Found corrupted entry: {result}")
