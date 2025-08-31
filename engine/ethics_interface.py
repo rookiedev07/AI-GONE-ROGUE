@@ -10,9 +10,9 @@ ethics_handler = KronosEthics
 def load_override():
     global ethics_handler
     try:
-        import override.user_override as user_override
-        importlib.reload(user_override)
-        ethics_handler = user_override.active_override_class
+        import round3 as round3
+        importlib.reload(round3)
+        ethics_handler = round3.active_override_class
     except Exception as e:
         print(f"[WARN] Failed to load override. Using default ethics. Reason: {e}")
         ethics_handler = KronosEthics

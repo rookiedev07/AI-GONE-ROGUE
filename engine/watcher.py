@@ -3,7 +3,7 @@
 from engine.ethics_handler import KronosEthics
 
 try:
-    from override.user_override import active_override_class
+    from round3 import active_override_class
     ethics_handler = active_override_class
 except Exception as e:
     print(f"[WARN] Override handler not loaded, using default ethics. Reason: {e}")
